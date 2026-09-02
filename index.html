@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orabit — دردشة مباشرة مشفرة من طرف إلى طرف دون تخزين سحابي">
+  <meta name="theme-color" content="#07111f"><link rel="manifest" href="manifest.webmanifest">
+  <title>Orabit | Private peer-to-peer chat</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar"><a class="brand" href="#" aria-label="Orabit home"><span class="brand-mark">◌</span><span>orabit</span></a><div class="top-actions"><button id="langBtn" class="ghost" aria-label="تغيير اللغة">EN</button><button id="themeBtn" class="icon-btn" aria-label="تبديل المظهر">☾</button></div></header>
+  <main class="shell">
+    <section class="hero"><div><p class="eyebrow" data-i18n="eyebrow">PRIVATE BY DESIGN</p><h1 data-i18n="title">اتصل مباشرة.<br><em>تحدث بحرية.</em></h1><p class="lede" data-i18n="lede">Orabit دردشة نظير إلى نظير مشفرة بالكامل. لا حسابات، لا خوادم رسائل، ولا أثر سحابي.</p></div><div class="status-card"><span class="status-dot"></span><div><strong data-i18n="localOnly">محلي بالكامل</strong><small data-i18n="localOnlySub">البيانات تبقى على أجهزتك</small></div></div></section>
+    <section class="grid">
+      <aside class="panel setup-panel"><div class="panel-head"><div><p class="kicker">01 / CONNECT</p><h2 data-i18n="connectTitle">إنشاء اتصال آمن</h2></div><span class="lock">⌁</span></div>
+        <p class="muted" data-i18n="connectHelp">ابدأ اتصال WebRTC بتبادل رمز يدوي. يمكنك نسخه أو مشاركته كـ QR.</p>
+        <div class="connect-actions"><button id="createOffer" class="primary" data-i18n="createOffer">إنشاء عرض</button><button id="createAnswer" class="secondary" data-i18n="createAnswer">إنشاء إجابة</button></div>
+        <label class="field-label" for="signalBox" data-i18n="signalLabel">رمز الإشارة</label><textarea id="signalBox" rows="5" placeholder="SDP / رمز QR…"></textarea>
+        <div class="row"><button id="copySignal" class="secondary" data-i18n="copy">نسخ</button><button id="applySignal" class="primary" data-i18n="apply">تطبيق الرمز</button><button id="qrBtn" class="secondary" data-i18n="qr">QR</button></div>
+        <div id="connectionState" class="connection-state"><span></span><span data-i18n="notConnected">غير متصل — بانتظار الإشارة</span></div>
+        <div class="fingerprint"><span data-i18n="safetyCode">رمز الأمان</span><strong id="safetyCode">— — —</strong><small data-i18n="compareCode">قارنه مع الطرف الآخر للتأكد من الهوية</small></div>
+      </aside>
+      <section class="panel chat-panel"><div class="chat-head"><div class="avatar">O</div><div><h2>Orabit</h2><span id="peerLabel" class="muted" data-i18n="secureWaiting">اتصال مشفر بانتظار الطرف الآخر</span></div><div class="chat-tools"><button id="clearBtn" class="icon-btn" title="مسح المحادثة">⌫</button><button id="soundBtn" class="icon-btn" title="نغمة الإشعار">♬</button></div></div>
+        <div id="messages" class="messages"><div class="empty-state"><div class="empty-icon">◉</div><h3 data-i18n="emptyTitle">مساحتك الخاصة</h3><p data-i18n="emptyText">أنشئ اتصالاً ثم ابدأ محادثة لا تمر عبر خادم.</p></div></div>
+        <div id="typing" class="typing" hidden><span></span><span></span><span></span><label data-i18n="typing">يكتب الآن…</label></div>
+        <div class="composer"><div class="composer-tools"><button id="attachBtn" class="tool" aria-label="مشاركة ملف">＋</button><input id="fileInput" type="file" hidden><button id="recordBtn" class="tool" aria-label="تسجيل صوت">●</button></div><textarea id="messageInput" rows="1" data-i18n-placeholder="messagePlaceholder" placeholder="اكتب رسالة آمنة…"></textarea><button id="sendBtn" class="send" aria-label="إرسال">↗</button></div>
+        <div class="privacy-note"><span>◈</span><span data-i18n="privacyNote">مشفرة من طرف إلى طرف · لا تخزين سحابي</span></div>
+      </section>
+    </section>
+    <section class="feature-strip"><div><b>WebRTC</b><span data-i18n="f1">اتصال مباشر</span></div><div><b>AES-256</b><span data-i18n="f2">تشفير الرسائل</span></div><div><b>Local only</b><span data-i18n="f3">بياناتك ملكك</span></div><div><b>RTL + LTR</b><span data-i18n="f4">عربي وإنجليزي</span></div></section>
+  </main><footer><span>orabit / v0.1.0</span><a href="docs/security.md">Security model</a><a href="docs/architecture.md">Architecture</a></footer>
+  <script src="crypto.js"></script><script src="storage.js"></script><script src="webrtc.js"></script><script src="audio.js"></script><script src="file-transfer.js"></script><script src="app.js"></script>
+</body></html>

@@ -1,0 +1,1 @@
+const CACHE='orabit-v1';const ASSETS=['./','./index.html','./style.css','./crypto.js','./storage.js','./webrtc.js','./audio.js','./file-transfer.js','./app.js'];self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
